@@ -1,21 +1,11 @@
+import 'package:exo_basiques/model/post.dart';
 import 'package:exo_basiques/view/profile_image.dart';
 import 'package:flutter/material.dart';
 
-class Post extends StatelessWidget {
-  final String time;
-  final String imageName;
-  final String desc;
-  final int likes;
-  final int comments;
+class PostCard extends StatelessWidget {
+  final Post post;
 
-  const Post(
-      {required this.time,
-      required this.imageName,
-      required this.desc,
-      this.likes = 0,
-      this.comments = 0,
-      Key? key})
-      : super(key: key);
+  const PostCard({required this.post, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +21,10 @@ class Post extends StatelessWidget {
               children: [
                 profilePicture(radius: 20),
                 const Padding(padding: EdgeInsets.only(left: 5)),
-                const Text("David Grammatico"),
+                Text(post.name),
                 const Spacer(),
                 Text(
-                  "Il y a $time",
+                  post.setTime(),
                   style: const TextStyle(color: Colors.blue),
                 )
               ],
@@ -42,11 +32,11 @@ class Post extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.only(top: 10, bottom: 10),
                 child: Image.asset(
-                  "images/$imageName",
+                  "images/${post.imageName}",
                   fit: BoxFit.cover,
                 )),
             Text(
-              desc,
+              post.desc,
               style: const TextStyle(color: Colors.blueAccent),
               textAlign: TextAlign.center,
             ),
@@ -55,9 +45,9 @@ class Post extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const Icon(Icons.favorite),
-                Text("$likes likes"),
+                Text(post.setLikes()),
                 const Icon(Icons.comment),
-                Text("$comments commentaires")
+                Text(post.setComments())
               ],
             )
           ],

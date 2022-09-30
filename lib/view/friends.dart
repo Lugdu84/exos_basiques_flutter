@@ -16,7 +16,7 @@ Column friends({required Size size}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      littleTitle(text: "Amis"),
+      const LittleTitle(text: "Amis"),
       SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(children: children),

@@ -17,7 +17,7 @@ class HomeView extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Column(
-            children: [header(size: size), friends(size: size), const Posts()],
+            children: [header(size: size), friends(size: size), Posts()],
           ),
         ));
   }

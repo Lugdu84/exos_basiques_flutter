@@ -1,6 +1,7 @@
 import 'package:exo_basiques/view/button_container.dart';
 import 'package:exo_basiques/view/icon_text.dart';
 import 'package:exo_basiques/view/little_title.dart';
+import 'package:exo_basiques/view/main_title.dart';
 import 'package:exo_basiques/view/profile_image.dart';
 import 'package:flutter/material.dart';
 
@@ -20,15 +21,7 @@ Column header({required Size size}) {
           profilImage(imageName: "profile.jpg")
         ],
       ),
-      const Center(
-        child: Text(
-          "David Grammatico",
-          style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic),
-        ),
-      ),
+      const Center(child: MainTitleText(data: "David Grammatico")),
       const Text(
         "Un jour, les chats domineront le monde, mais pas aujourd'hui, c'est l'heure de la sieste",
         style: TextStyle(color: Colors.grey),
@@ -48,7 +41,7 @@ Column header({required Size size}) {
       const Divider(
         thickness: 2,
       ),
-      littleTitle(text: "A propos de moi"),
+      const LittleTitle(text: "A propos de moi"),
       iconText(icon: Icons.house, iconText: "Caumont-sur-Durance, France"),
       iconText(icon: Icons.work, iconText: "Développeur web / mobile"),
       iconText(icon: Icons.favorite, iconText: "Marié"),
