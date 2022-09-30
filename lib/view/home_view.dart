@@ -1,4 +1,6 @@
+import 'package:exo_basiques/view/friends.dart';
 import 'package:exo_basiques/view/header.dart';
+import 'package:exo_basiques/view/posts.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -10,14 +12,12 @@ class HomeView extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text(
-            "Basics",
+            "Facbook profile",
           ),
         ),
         body: SingleChildScrollView(
           child: Column(
-            children: [
-              header(size: size),
-            ],
+            children: [header(size: size), friends(size: size), const Posts()],
           ),
         ));
   }
